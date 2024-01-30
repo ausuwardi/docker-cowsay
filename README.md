@@ -1,14 +1,11 @@
-mbentley/cowsay
+Docker Cowsay
 ===============
 
 docker image for cowsay (with moby dock)
-based off of debian:jessie
-
-To pull this image:
-`docker pull mbentley/cowsay`
+based off of debian:bookworm
 
 Example usage:
-`docker run -it --rm mbentley/cowsay holy ship!`
+`docker run -it --rm docker-cowsay holy ship!`
 
 ```
  ____________
