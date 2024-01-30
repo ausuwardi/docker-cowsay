@@ -43,7 +43,7 @@ Nexus Demo
 6. Run Docker image from nxdr-demo registry
 
     ```sh
-    docker run --rm nxdr-demo.parainfra.id/demo/<user>/cowsay:1.0.0
+    docker run --rm nxdr-demo.parainfra.id/demo/<user>/cowsay:1.0.0 hello nexus demo
     ```
 
 
