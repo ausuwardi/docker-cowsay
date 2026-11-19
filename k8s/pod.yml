@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nexus-demo
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: nexus-docker-config
+  namespace: nexus-demo
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: <secret>
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nexus-demo-anes
+  namespace: nexus-demo
+  labels:
+    app.kubernetes.io/name: nexus-demo-anes
+spec:
+  imagePullSecrets:
+  - name: nexus-docker-config
+  containers:
+  - name: nexus-demo
+    image: nxdr-demo.parainfra.id/demo/anes/cowsay:1.0.0
+    command: ["hello", "nexus", "from", "k8s"]
+  restartPolicy: Never
